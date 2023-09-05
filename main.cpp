@@ -54,7 +54,16 @@ int main(int argc, char **argv) {
 
     char buf[1024];
 
+
     char portname[32];
+
+    if (argc<2) {
+        fprintf(stderr,"usage: cnchome.exe [com port]\n");
+        fprintf(stderr,"ex: cnchome.exe com3\n");
+        return(2);
+    }
+
+
     sprintf(portname, R"(\\.\%s)",argv[1]);
 
 //    FILE* com = fopen(portname,"rw");
